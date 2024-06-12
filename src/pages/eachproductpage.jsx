@@ -395,7 +395,7 @@ export const Eachproductpage = () => {
                       {/* Price */}
                       <div className="price ">
                         {" "}
-                        ${updatedPrice.toLocaleString()}
+                        ₦{updatedPrice.toLocaleString()}
                       </div>
                       <div className="text">{pageData?.intro}</div>
                       <div className="d-flex flex-wrap">
@@ -452,7 +452,7 @@ export const Eachproductpage = () => {
                         })}
                       </select>
                       <div className="price ">
-                        ${updatedPrice.toLocaleString()}
+                      ₦{updatedPrice.toLocaleString()}
                       </div>
 
                       <div className="d-flex align-items-center flex-wrap mt-4">

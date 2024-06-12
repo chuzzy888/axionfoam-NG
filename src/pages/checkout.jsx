@@ -468,16 +468,16 @@ export const Checkout = () => {
                   <ul className="order-totals">
                     <li>
                       Subtotal
-                      <span>${Number(total).toLocaleString()}</span>
+                      <span>₦{Number(total).toLocaleString()}</span>
                     </li>
                     <li>
-                      Shipping Fee<span>$0</span>
+                      Shipping Fee<span>₦0</span>
                     </li>
                   </ul>
 
                   {/* Order Total */}
                   <div className="order-total">
-                    Total <span>${Number(total).toLocaleString()}</span>
+                    Total <span>₦{Number(total).toLocaleString()}</span>
                   </div>
                   <div className="mt-5">
                     <label htmlFor="" className="fs-6">

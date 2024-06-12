@@ -453,7 +453,7 @@ export const Compare = () => {
                             color: "white",
                           }}
                         >
-                          {eachsize.name} ₦{eachsize.price.toLocaleString()}
+                          {eachsize.name} ${eachsize.price.toLocaleString()}
                         </div>
                       </div>
                     );
@@ -504,7 +504,7 @@ export const Compare = () => {
                             color: "white",
                           }}
                         >
-                          {eachsize.name} ₦{eachsize.price.toLocaleString()}
+                          {eachsize.name} ${eachsize.price.toLocaleString()}
                         </div>
                       </div>
                     );

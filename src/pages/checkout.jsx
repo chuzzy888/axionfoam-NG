@@ -14,6 +14,8 @@ export const Checkout = () => {
   const [products, setProducts] = useState(localStorage.getItem("cart"));
   const [show, setShow] = useState(false);
 
+
+
   const handleClose = () => {
     setShow(false);
     navigate("/orders");
@@ -58,21 +60,55 @@ export const Checkout = () => {
     };
   }, []);
 
+  // const [user, setUser] = useState(null);
+
+  // const getUser = () => {
+  //   const userInLocal = localStorage.getItem("user");
+  //   if (userInLocal) {
+  //     setUser(JSON.parse(userInLocal));
+  //   }
+
+  //   console.log(JSON.parse(userInLocal));
+  // };
+
+  // useEffect(() => {
+  //   getUser();
+  // }, []);
+  // console.log(JSON.parse(products));
+
+
+
+
+
+
+
+
+
+
+
+  // Add the logic to check if the user is logged in before proceeding with the checkout:
+
   const [user, setUser] = useState(null);
 
   const getUser = () => {
     const userInLocal = localStorage.getItem("user");
     if (userInLocal) {
       setUser(JSON.parse(userInLocal));
+    } else {
+      alert("Please create an account or log in to an existing account");
+      navigate("/login");
     }
-
-    console.log(JSON.parse(userInLocal));
   };
 
   useEffect(() => {
     getUser();
   }, []);
-  // console.log(JSON.parse(products));
+
+
+
+
+
+
 
   const handleSubmit = async () => {
     try {
@@ -432,16 +468,16 @@ export const Checkout = () => {
                   <ul className="order-totals">
                     <li>
                       Subtotal
-                      <span>₦{Number(total).toLocaleString()}</span>
+                      <span>${Number(total).toLocaleString()}</span>
                     </li>
                     <li>
-                      Shipping Fee<span>₦0</span>
+                      Shipping Fee<span>$0</span>
                     </li>
                   </ul>
 
                   {/* Order Total */}
                   <div className="order-total">
-                    Total <span>₦{Number(total).toLocaleString()}</span>
+                    Total <span>${Number(total).toLocaleString()}</span>
                   </div>
                   <div className="mt-5">
                     <label htmlFor="" className="fs-6">
@@ -476,10 +512,10 @@ export const Checkout = () => {
                     ) : (
                       <>
                         {!phoneNumber ||
-                        !state ||
-                        !city ||
-                        !address ||
-                        !user.email ? (
+                          !state ||
+                          !city ||
+                          !address ||
+                          !user.email ? (
                           <button
                             className="theme-btn pay-btn"
                             onClick={() => {
@@ -542,3 +578,25 @@ export const Checkout = () => {
     </div>
   );
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

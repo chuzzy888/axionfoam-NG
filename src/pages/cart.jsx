@@ -313,7 +313,7 @@ export const Cart = () => {
                       <div className="cart-total-box">
                         <ul className="cart-totals">
                           <li>
-                            Total : <span>₦{total.toLocaleString()}</span>
+                            Total : <span>${total.toLocaleString()}</span>
                           </li>
                         </ul>
 

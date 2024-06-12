@@ -79,7 +79,7 @@ export const Eachproductcompare = ({ item }) => {
                 navigate(`/products?id=${item.id}`);
               }}
             >
-              ₦{price?.toLocaleString()}
+              ${price?.toLocaleString()}
             </div>
             {/* Select Size */}
             <div
@@ -100,7 +100,7 @@ export const Eachproductcompare = ({ item }) => {
                     borderRadius: "13px",
                   }}
                 >
-                  ₦{price?.toLocaleString()}
+                  ${price?.toLocaleString()}
                 </label>
               </div>
             </div>

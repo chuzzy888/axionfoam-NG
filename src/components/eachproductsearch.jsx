@@ -125,7 +125,7 @@ export const EachproductSearch = ({ item }) => {
                     borderRadius: "13px",
                   }}
                 >
-                  ₦{price.toLocaleString()}
+                  ${price.toLocaleString()}
                 </label>
               </div>
             </div>

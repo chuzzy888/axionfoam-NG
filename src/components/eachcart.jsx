@@ -282,7 +282,7 @@ export const Eachcart = ({ item, _index, getCartItems, getSubTotal }) => {
           </div>
         </div>
       </td>
-      <td className="price">₦{item?.originalPrice?.toLocaleString()}</td>
+      <td className="price">${item?.originalPrice?.toLocaleString()}</td>
       {/* Quantity Box */}
       <td
         className="d-flex "
@@ -342,7 +342,7 @@ export const Eachcart = ({ item, _index, getCartItems, getSubTotal }) => {
           +
         </div>
       </td>
-      <td className="price"> ₦{price.toLocaleString()}</td>
+      <td className="price"> ${price.toLocaleString()}</td>
     </tr>
   );
 };

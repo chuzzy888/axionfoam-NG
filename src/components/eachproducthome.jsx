@@ -141,3 +141,14 @@ export const Eachproducthome = ({ item }) => {
     </div>
   );
 };
+
+
+
+
+
+
+
+
+
+
+

@@ -394,21 +394,26 @@ export const Admin = () => {
       const productExists = allProducts.find((item) => {
         return item.id === id;
       });
+
+      console.log(displayedImages);
+
       const filtered = displayedImages.filter((eachImage) => {
         return eachImage !== name;
       });
 
-      const images = productExists.images.filter((item) => {
-        return item !== name;
-      });
+      // const images = JSON.parse(productExists.images).filter((item) => {
+      //   return item !== name;
+      // });
+
       const response = await axios.put(
         "https://axionbackend.betsphere.com.ng/api/deleteimage",
         {
           id,
-          images,
+          images: filtered,
           secureUrl: name,
         }
       );
+
       setDisplayedImages(filtered);
       getAllProducts();
     } catch (error) {
@@ -454,7 +459,7 @@ export const Admin = () => {
         const updatedProduct = getproducts?.data?.data.find((item) => {
           return item.id === id;
         });
-        setDisplayedImages(updatedProduct.images);
+        setDisplayedImages(JSON.parse(updatedProduct.images));
       }, 4000);
 
       setNumImages(0);
@@ -1263,7 +1268,9 @@ export const Admin = () => {
                                               JSON.parse(item.sizes).length
                                             )
                                           );
-                                          setDisplayedImages(item.images);
+                                          setDisplayedImages(
+                                            JSON.parse(item.images)
+                                          );
                                           setEditingId(item.id);
                                           setnumSizes(0);
                                           setNumImages(0);

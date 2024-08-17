@@ -64,19 +64,19 @@ export const Footer = () => {
                     <h5>Find It Fast</h5>
                     <ul className="page-list">
                       <li>
-                        <a href="/shop/category=mattress">Mattress</a>
+                        <a href="/shop?category=mattress">Mattress</a>
                       </li>
                       <li>
-                        <a href="/shop/category=toppers">Toppers</a>
+                        <a href="/shop?category=toppers">Toppers</a>
                       </li>
                       <li>
-                        <a href="/shop/category=pillows">Pillows</a>
+                        <a href="/shop?category=pillows">Pillows</a>
                       </li>
                       <li>
-                        <a href="/shop/category=bedbase">Bed Base</a>
+                        <a href="/shop?category=bedbase">Bed Base</a>
                       </li>
                       <li>
-                        <a href="/shop/category=protectors">Protectors</a>
+                        <a href="/shop?category=protectors">Protectors</a>
                       </li>
                     </ul>
                   </div>

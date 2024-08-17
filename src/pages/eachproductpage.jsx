@@ -356,7 +356,7 @@ export const Eachproductpage = () => {
               <div className="upper-box">
                 <div className="row clearfix">
                   {/* Gallery Column */}
-                  <div className="gallery-column col-lg-6 col-md-12 col-sm-12 ps-md-5">
+                  <div className="gallery-column col-lg-6 col-md-12 col-sm-12 ps-md-5 ">
                     <div className="inner-column">
                       <div className="carousel-outer">
                         {/* Swiper */}
@@ -381,6 +381,51 @@ export const Eachproductpage = () => {
                                 </div>
                               );
                             })}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class=" my-4 text-dark d-none d-sm-block">
+                      <h2 class="h4 mb-4">Got questions?</h2>
+                      <p class="mb-4">
+                        Our friendly Sleep Specialists are here to help. Give us
+                        a call now <br /> or visit your local store.
+                      </p>
+                      <a href="tel:+18884980003" class="d-flex  mb-4">
+                        Give us a call: +1 888.498.0003
+                      </a>
+                      <a
+                        href="#"
+                        class="d-inline-flex align-items-center text-secondary"
+                      >
+                        <span>Try it in a store near you</span>
+                        <svg
+                          class="ms-2"
+                          width="16"
+                          height="16"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                        >
+                          <path d="M10 3a1 1 0 011 1v4h4a1 1 0 110 2h-4v4a1 1 0 11-2 0v-4H6a1 1 0 110-2h4V4a1 1 0 011-1z" />
+                        </svg>
+                      </a>
+
+                      <h3 class="h5 mt-4 mb-2">Don't Lose Sleep</h3>
+                      <div class="row g-3">
+                        <div class="col-md-4">
+                          <div class="bg-secondary text-light p-3 rounded text-center">
+                            Free, no-contact delivery*
+                          </div>
+                        </div>
+                        {/* <div class="col-md-4">
+                          <div class="bg-secondary text-light p-4 rounded text-center">
+                            100-night risk-free trial*
+                          </div>
+                        </div> */}
+                        <div class="col-md-4">
+                          <div class="bg-secondary text-light p-3 rounded text-center">
+                            10-year limited warranty*
                           </div>
                         </div>
                       </div>
@@ -452,7 +497,7 @@ export const Eachproductpage = () => {
                         })}
                       </select>
                       <div className="price ">
-                      ₦{updatedPrice.toLocaleString()}
+                        ₦{updatedPrice.toLocaleString()}
                       </div>
 
                       <div className="d-flex align-items-center flex-wrap mt-4">
@@ -559,7 +604,7 @@ export const Eachproductpage = () => {
                 {/* Product Info Tabs */}
                 <div className="product-info-tabs">
                   {/* Product Tabs */}
-                  <div className="prod-tabs tabs-box">
+                  <div className="prod-tabs tabs-box mx-lg-4">
                     {/* Tab Btns */}
                     <ul className="tab-btns tab-buttons clearfix">
                       <li
@@ -576,7 +621,7 @@ export const Eachproductpage = () => {
                         className="tab active-tab"
                         id="prod-details"
                         style={{
-                          maxWidth: "800px",
+                          maxWidth: "500px",
                         }}
                       >
                         <div className="content">
@@ -587,8 +632,10 @@ export const Eachproductpage = () => {
                   </div>
                 </div>
 
-                <div className="prod-tabs tabs-box">
-                  {/* Tab Btns */}
+                {/* REMOVE REVIEW FEATURE */}
+
+                {/* <div className="prod-tabs tabs-box">
+                  
                   <ul className="tab-btns tab-buttons clearfix">
                     <div className="d-flex justify-content-between">
                       <li
@@ -610,9 +657,9 @@ export const Eachproductpage = () => {
                       )}
                     </div>
                   </ul>
-                </div>
+                </div> */}
 
-                {reviews.length > 0 ? (
+                {/* {reviews.length > 0 ? (
                   <div className="mt-5 ">
                     {reviews.map((eachRev) => {
                       return (
@@ -683,7 +730,7 @@ export const Eachproductpage = () => {
                   </div>
                 ) : (
                   <div className="fs-5 mt-4">No reviews yet</div>
-                )}
+                )} */}
 
                 {/*End Product Info Tabs*/}
               </div>

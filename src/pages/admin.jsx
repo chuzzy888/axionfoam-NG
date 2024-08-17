@@ -9,6 +9,9 @@ import { useNavigate } from "react-router-dom";
 // adm@axion.com
 // Axionfoams@2023
 
+// admin@axion.com
+// Axionfoams@2023
+
 export const Admin = () => {
   const [images, setImages] = useState([]);
   const [numImages, setNumImages] = useState(0);
@@ -2408,7 +2411,7 @@ export const Admin = () => {
               <h4 className="mb-4">Products</h4>
 
               {orderShowing?.products &&
-                orderShowing?.products.map((eachproduct, index) => {
+                JSON.parse(orderShowing?.products).map((eachproduct, index) => {
                   return (
                     <div className="mt-2">
                       <span className="text-danger">({index + 1})</span>

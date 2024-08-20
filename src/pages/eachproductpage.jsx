@@ -98,7 +98,7 @@ export const Eachproductpage = () => {
   }, []);
 
   const getData = () => {
-    const data = productData.find((item) => {
+    const data = productData.find(item => {
       return Number(item.id) === Number(id);
     });
     window.scrollTo(0, 0);
@@ -109,11 +109,11 @@ export const Eachproductpage = () => {
     setPageData(data);
   };
 
-  const addToCart = (productToAdd) => {
+  const addToCart = productToAdd => {
     const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
 
     const existingProductIndex = existingCart.findIndex(
-      (item) =>
+      item =>
         item.productId === productToAdd.productId &&
         item.size === productToAdd.size
     );
@@ -190,7 +190,7 @@ export const Eachproductpage = () => {
 
   useEffect(() => {
     const category = pageData?.category;
-    const relatedData = productData.filter((item) => {
+    const relatedData = productData.filter(item => {
       return (
         item?.category?.toUpperCase() === category?.toUpperCase() &&
         item.id !== pageData?.id
@@ -362,7 +362,7 @@ export const Eachproductpage = () => {
                         {/* Swiper */}
                         <div className="swiper-container content-carousel">
                           <div className="swiper-wrapper">
-                            {JSON.parse(pageData?.images)?.map((eachImage) => {
+                            {JSON.parse(pageData?.images)?.map(eachImage => {
                               return (
                                 <div className="swiper-slide">
                                   <figure className="image figureimage">
@@ -381,51 +381,6 @@ export const Eachproductpage = () => {
                                 </div>
                               );
                             })}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class=" my-4 text-dark d-none d-sm-block">
-                      <h2 class="h4 mb-4">Got questions?</h2>
-                      <p class="mb-4">
-                        Our friendly Sleep Specialists are here to help. Give us
-                        a call now <br /> or visit your local store.
-                      </p>
-                      <a href="tel:+18884980003" class="d-flex  mb-4">
-                        Give us a call: +1 888.498.0003
-                      </a>
-                      <a
-                        href="#"
-                        class="d-inline-flex align-items-center text-secondary"
-                      >
-                        <span>Try it in a store near you</span>
-                        <svg
-                          class="ms-2"
-                          width="16"
-                          height="16"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                        >
-                          <path d="M10 3a1 1 0 011 1v4h4a1 1 0 110 2h-4v4a1 1 0 11-2 0v-4H6a1 1 0 110-2h4V4a1 1 0 011-1z" />
-                        </svg>
-                      </a>
-
-                      <h3 class="h5 mt-4 mb-2">Don't Lose Sleep</h3>
-                      <div class="row g-3">
-                        <div class="col-md-4">
-                          <div class="bg-secondary text-light p-3 rounded text-center">
-                            Free, no-contact delivery*
-                          </div>
-                        </div>
-                        {/* <div class="col-md-4">
-                          <div class="bg-secondary text-light p-4 rounded text-center">
-                            100-night risk-free trial*
-                          </div>
-                        </div> */}
-                        <div class="col-md-4">
-                          <div class="bg-secondary text-light p-3 rounded text-center">
-                            10-year limited warranty*
                           </div>
                         </div>
                       </div>
@@ -450,7 +405,7 @@ export const Eachproductpage = () => {
                         </div>
                         {/* Select Size */}
                         <div className="select-size-box clearfix">
-                          {JSON.parse(pageData?.sizes).map((item) => {
+                          {JSON.parse(pageData?.sizes).map(item => {
                             return (
                               <div className="select-box">
                                 <input
@@ -470,7 +425,7 @@ export const Eachproductpage = () => {
                         id=""
                         className=" mt-3 productSelect"
                         // defaultValue={2 + 2}
-                        onChange={(e) => {
+                        onChange={e => {
                           setNewSize(e.target.value.split("-")[0]);
 
                           setSize(e.target.value.split("-")[0]);
@@ -482,7 +437,7 @@ export const Eachproductpage = () => {
                           // );
                         }}
                       >
-                        {JSON.parse(pageData?.sizes)?.map((eachsize) => {
+                        {JSON.parse(pageData?.sizes)?.map(eachsize => {
                           return (
                             <option
                               key={eachsize.name}
@@ -750,7 +705,7 @@ export const Eachproductpage = () => {
               <div className="row clearfix">
                 {/* Shop Item Two */}
 
-                {relatedDataArray.slice(0, 3).map((item) => {
+                {relatedDataArray.slice(0, 3).map(item => {
                   return <Eachproduct item={item}></Eachproduct>;
                 })}
               </div>
@@ -796,7 +751,7 @@ export const Eachproductpage = () => {
                 }}
                 className="mb-3 rounded py-1 px-2"
                 value={reviewerName}
-                onChange={(e) => {
+                onChange={e => {
                   setreviewerName(e.target.value);
                 }}
               />
@@ -817,7 +772,7 @@ export const Eachproductpage = () => {
                   minWidth: "400px",
                 }}
                 value={review}
-                onChange={(e) => {
+                onChange={e => {
                   setReview(e.target.value);
                 }}
               ></textarea>

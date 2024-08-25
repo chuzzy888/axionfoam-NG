@@ -1400,11 +1400,11 @@ export const Home = () => {
             </div>
             <div className="row clearfix">
               {productData
-                .filter((item) => {
+                .filter(item => {
                   return item.popular === "true" || item.popular === true;
                 })
                 .slice(0, 4)
-                .map((item) => {
+                .map(item => {
                   return <Eachproducthome item={item}></Eachproducthome>;
                 })}
             </div>
@@ -1439,7 +1439,7 @@ export const Home = () => {
                       </div>
                       <div className="circle-layer" />
                       <img
-                        src="hybrid.png"
+                        src="ccp.png"
                         alt=""
                         style={{ width: "250px", marginLeft: "-10px" }}
                       />
@@ -1462,11 +1462,11 @@ export const Home = () => {
                     </div>
                     <div className="image">
                       <div className="off-box">
-                        7<i>%</i> <span>off</span>
+                        5<i>%</i> <span>off</span>
                       </div>
                       <div className="circle-layer" />
                       <img
-                        src="cooling.png"
+                        src="cp.png"
                         alt=""
                         style={{ width: "300px", marginLeft: "-10px" }}
                       />
@@ -1662,7 +1662,7 @@ export const Home = () => {
                   {/* Subscribe Box Two */}
                   <div className="subscribe-box-two">
                     <form
-                      onSubmit={(e) => {
+                      onSubmit={e => {
                         e.preventDefault();
                       }}
                     >
@@ -1727,7 +1727,7 @@ export const Home = () => {
               </button>
             </div>
             <div className="row clearfix">
-              {blogdata.slice(0, 4).map((item) => {
+              {blogdata.slice(0, 4).map(item => {
                 return <EachBlog item={item}></EachBlog>;
               })}
             </div>

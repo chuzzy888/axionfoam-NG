@@ -14,8 +14,6 @@ export const Checkout = () => {
   const [products, setProducts] = useState(localStorage.getItem("cart"));
   const [show, setShow] = useState(false);
 
-
-
   const handleClose = () => {
     setShow(false);
     navigate("/orders");
@@ -76,16 +74,6 @@ export const Checkout = () => {
   // }, []);
   // console.log(JSON.parse(products));
 
-
-
-
-
-
-
-
-
-
-
   // Add the logic to check if the user is logged in before proceeding with the checkout:
 
   const [user, setUser] = useState(null);
@@ -103,12 +91,6 @@ export const Checkout = () => {
   useEffect(() => {
     getUser();
   }, []);
-
-
-
-
-
-
 
   const handleSubmit = async () => {
     try {
@@ -183,10 +165,11 @@ export const Checkout = () => {
     reference: new Date().getTime().toString(),
     email: user?.email,
     amount: total * 100, //Amount is in the country's lowest currency. E.g Kobo, so 20000 kobo = N200
-    publicKey: "pk_live_eedc7ffbdd5dbbdb114d9549e984f755794ea763",
+    // publicKey: "pk_live_eedc7ffbdd5dbbdb114d9549e984f755794ea763",
+    publicKey: import.meta.env.VITE_PUBLIC_KEY,
   };
 
-  const handlePaystackSuccessAction = async (reference) => {
+  const handlePaystackSuccessAction = async reference => {
     console.log(reference);
     try {
       console.log(JSON.parse(products));
@@ -221,7 +204,7 @@ export const Checkout = () => {
   const componentProps = {
     ...config,
     text: ` Online payment`,
-    onSuccess: (reference) => handlePaystackSuccessAction(reference),
+    onSuccess: reference => handlePaystackSuccessAction(reference),
     onClose: handlePaystackCloseAction,
   };
 
@@ -395,7 +378,7 @@ export const Checkout = () => {
                           name="phone"
                           placeholder="Enter Your Phone Number"
                           value={phoneNumber}
-                          onChange={(e) => {
+                          onChange={e => {
                             setPhoneNumber(e.target.value);
                           }}
                           required
@@ -408,7 +391,7 @@ export const Checkout = () => {
                           placeholder="Enter Your Full Name"
                           required
                           value={name}
-                          onChange={(e) => {
+                          onChange={e => {
                             console.log(name);
                             setName(e.target.value);
                           }}
@@ -421,7 +404,7 @@ export const Checkout = () => {
                           placeholder="Enter Your State"
                           required
                           value={state}
-                          onChange={(e) => {
+                          onChange={e => {
                             // console.log(name);
                             setState(e.target.value);
                           }}
@@ -434,7 +417,7 @@ export const Checkout = () => {
                           placeholder="Enter Your City"
                           required
                           value={city}
-                          onChange={(e) => {
+                          onChange={e => {
                             // console.log(name);
                             setCity(e.target.value);
                           }}
@@ -444,7 +427,7 @@ export const Checkout = () => {
                       <div className="col-lg-12 col-md-12 col-sm-12 form-group">
                         <textarea
                           value={address}
-                          onChange={(e) => {
+                          onChange={e => {
                             setAddress(e.target.value);
                           }}
                           className
@@ -489,7 +472,7 @@ export const Checkout = () => {
                       name=""
                       className="w-full border  py-2 px-3 rounded mt-2 shadow-md"
                       id=""
-                      onChange={(e) => {
+                      onChange={e => {
                         setPaymentMethod(e.target.value);
                       }}
                     >
@@ -512,10 +495,10 @@ export const Checkout = () => {
                     ) : (
                       <>
                         {!phoneNumber ||
-                          !state ||
-                          !city ||
-                          !address ||
-                          !user.email ? (
+                        !state ||
+                        !city ||
+                        !address ||
+                        !user.email ? (
                           <button
                             className="theme-btn pay-btn"
                             onClick={() => {
@@ -578,25 +561,3 @@ export const Checkout = () => {
     </div>
   );
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

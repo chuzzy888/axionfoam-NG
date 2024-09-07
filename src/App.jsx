@@ -22,11 +22,13 @@ import { Blogpage } from "./pages/blogpage";
 import { Eachblogpost } from "./pages/eachblogpost";
 import { Compare } from "./pages/compare";
 import MattressQuiz from "./pages/MattressQuiz";
+import PromoModal from "./components/PromoModal";
 // import $ from "jquery";
 
 function App() {
   return (
     <div>
+      <PromoModal />
       <CartProvider>
         <BrowserRouter>
           <Routes>
@@ -55,7 +57,7 @@ function App() {
               path="/eachblogpost"
               element={<Eachblogpost></Eachblogpost>}
             ></Route>
-            <Route path="/quiz" element={<MattressQuiz/>}/>
+            <Route path="/quiz" element={<MattressQuiz />} />
           </Routes>
         </BrowserRouter>
       </CartProvider>

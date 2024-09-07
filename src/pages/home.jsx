@@ -1486,47 +1486,27 @@ export const Home = () => {
         </div>
         <div className="mx-3">
           <Slider {...settings}>
-            {/* <img src="displaypictures/rfoam2.jpg" alt="" className="dp" />
-            <img src="displaypictures/rfoam11.jpg" alt="" className="dp" />
-            <img src="displaypictures/rfoam12.jpg" alt="" className="dp" />
+            <img src="displaypictures/rfoam2.jpg" alt="" className="dp" />
+            {/* <img src="displaypictures/rfoam11.jpg" alt="" className="dp" /> */}
+            {/* <img src="displaypictures/rfoam12.jpg" alt="" className="dp" /> */}
             <img src="displaypictures/rfoam3.jpg" alt="" className="dp" />
             <img src="displaypictures/rfoam4.jpg" alt="" className="dp" />
-            <img src="displaypictures/mtopper1.jpg" alt="" className="dp" />
-            <img src="displaypictures/rfoam5.jpg" alt="" className="dp" />
-            <img src="displaypictures/mtopper2.jpg" alt="" className="dp" />
+            {/* <img src="displaypictures/mtopper1.jpg" alt="" className="dp" /> */}
+            <img src="cp.jpg" alt="" className="dp" />
+            <img src="ht.jpg" alt="" className="dp" />
             <img src="displaypictures/rfoam6.jpg" alt="" className="dp" />
-            <img src="displaypictures/mtopper1.jpg" alt="" className="dp" />
             <img src="displaypictures/rfoam7.jpg" alt="" className="dp" />
-            <img src="displaypictures/downtopper4.jpg" alt="" className="dp" />
-            <img src="displaypictures/rfoam8.jpg" alt="" className="dp" />
-            <img src="displaypictures/downtopper2.jpg" alt="" className="dp" />
-            <img src="displaypictures/rfoam13.jpg" alt="" className="dp" />
-            <img src="displaypictures/rfoam9.jpg" alt="" className="dp" />
+            <img src="pd.jpg" alt="" className="dp" />
 
-            <img src="displaypictures/downtopper3.jpg" alt="" className="dp" />
+            <img src="de.jpg" alt="" className="dp" />
+            <img src="lp.jpg" alt="" className="dp" />
+            <img src="fy.jpg" alt="" className="dp" />
+            <img src="ap.jpg" alt="" className="dp" />
+            {/* <img src="cd.png" alt="" className="dp" /> */}
 
-            <img src="displaypictures/rfoam11.jpg" alt="" className="dp" /> */}
+            {/* <img src="displaypictures/downtopper3.jpg" alt="" className="dp" /> */}
 
-            <img src="displaypictures/ax1 (1).jpeg" alt="" className="dp" />
-            <img src="displaypictures/ax1 (2).jpeg" alt="" className="dp" />
-            <img src="displaypictures/ax1 (3).jpeg" alt="" className="dp" />
-            <img src="displaypictures/ax1 (4).jpeg" alt="" className="dp" />
-            {/* <img src="displaypictures/ax1 (5).jpeg" alt="" className="dp" /> */}
-            <img src="displaypictures/ax1 (6).jpeg" alt="" className="dp" />
-            <img src="displaypictures/ax1 (7).jpeg" alt="" className="dp" />
-            <img src="displaypictures/ax1 (8).jpeg" alt="" className="dp" />
-            {/* <img src="displaypictures/ax1 (9).jpeg" alt="" className="dp" /> */}
-            {/* <img src="displaypictures/ax1 (10).jpeg" alt="" className="dp" /> */}
-            <img src="displaypictures/ax1 (11).jpeg" alt="" className="dp" />
-            <img src="displaypictures/ax1 (12).jpeg" alt="" className="dp" />
-            <img src="displaypictures/ax1 (13).jpeg" alt="" className="dp" />
-            <img src="displaypictures/ax1 (14).jpeg" alt="" className="dp" />
-            <img src="displaypictures/ax1 (15).jpeg" alt="" className="dp" />
-            <img src="displaypictures/ax1 (16).jpeg" alt="" className="dp" />
-
-            {/* <img src="displaypictures/ax1 (17).jpeg" alt="" className="dp" /> */}
-
-            <img src="displaypictures/ax1 (18).jpeg" alt="" className="dp" />
+            {/* <img src="displaypictures/rfoam11.jpg" alt="" className="dp" /> */}
           </Slider>
         </div>
 

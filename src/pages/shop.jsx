@@ -44,68 +44,122 @@ export const Shop = () => {
     getAllProducts();
   }, []);
 
+  // THIS IS WHERE I SORT TO DISPLAY ALPHABETICALLY
+
+  // const getData = () => {
+  //   const queryParams = new URLSearchParams(window.location.search);
+  //   const category = queryParams.get("category");
+
+  //   // Use the 'category' value as needed
+  //   if (category) {
+  //     console.log("Selected category:", category);
+  //     // Perform any additional actions with the category value
+  //   }
+  //   if (category?.toUpperCase() === "ALL") {
+  //     setDisplayedData(productData);
+  //   } else if (category?.toUpperCase() === "MATTRESS") {
+  //     const data = productData.filter(eachMattress => {
+  //       return eachMattress?.category?.toUpperCase() === "MATTRESS";
+  //     });
+  //     console.log(data);
+  //     setDisplayedData(data);
+  //   } else if (category?.toUpperCase() === "TOPPERS") {
+  //     const data = productData.filter(eachMattress => {
+  //       return eachMattress?.category?.toUpperCase() === "TOPPER";
+  //     });
+  //     setDisplayedData(data);
+  //   } else if (category?.toUpperCase() === "PILLOWS") {
+  //     const data = productData.filter(eachMattress => {
+  //       return eachMattress?.category?.toUpperCase() === "PILLOW";
+  //     });
+  //     setDisplayedData(data);
+  //   } else if (category?.toUpperCase() === "BEDBASE") {
+  //     const data = productData.filter(eachMattress => {
+  //       return eachMattress?.category?.toUpperCase() === "BEDBASE";
+  //     });
+  //     setDisplayedData(data);
+  //   } else if (category?.toUpperCase() === "PROTECTORS") {
+  //     const data = productData.filter(eachMattress => {
+  //       return eachMattress?.category?.toUpperCase() === "PROTECTOR";
+  //     });
+
+  //     setDisplayedData(data);
+  //   } else if (category?.toUpperCase() === "MATS") {
+  //     const data = productData.filter(eachMattress => {
+  //       return eachMattress?.category?.toUpperCase() === "MATS";
+  //     });
+  //     setDisplayedData(data);
+  //   } else if (category?.toUpperCase() === "CUSHION") {
+  //     const data = productData.filter(eachMattress => {
+  //       return eachMattress?.category?.toUpperCase() === "CUSHION";
+  //     });
+
+  //     setDisplayedData(data);
+  //   } else if (category?.toUpperCase() === "COMPRESSION") {
+  //     const data = productData.filter(eachMattress => {
+  //       return eachMattress?.category?.toUpperCase() === "COMPRESSION";
+  //     });
+
+  //     setDisplayedData(data);
+  //   } else if (category?.toUpperCase() === "TRAVEL") {
+  //     const data = productData.filter(eachMattress => {
+  //       return eachMattress?.category?.toUpperCase() === "TRAVEL";
+  //     });
+
+  //     setDisplayedData(data);
+  //   }
+  // };
+
   const getData = () => {
     const queryParams = new URLSearchParams(window.location.search);
     const category = queryParams.get("category");
 
-    // Use the 'category' value as needed
-    if (category) {
-      console.log("Selected category:", category);
-      // Perform any additional actions with the category value
-    }
+    let filteredData = [];
+
     if (category?.toUpperCase() === "ALL") {
-      setDisplayedData(productData);
+      filteredData = productData;
     } else if (category?.toUpperCase() === "MATTRESS") {
-      const data = productData.filter(eachMattress => {
-        return eachMattress?.category?.toUpperCase() === "MATTRESS";
-      });
-      console.log(data);
-      setDisplayedData(data);
+      filteredData = productData.filter(
+        eachMattress => eachMattress?.category?.toUpperCase() === "MATTRESS"
+      );
     } else if (category?.toUpperCase() === "TOPPERS") {
-      const data = productData.filter(eachMattress => {
-        return eachMattress?.category?.toUpperCase() === "TOPPER";
-      });
-      setDisplayedData(data);
+      filteredData = productData.filter(
+        eachMattress => eachMattress?.category?.toUpperCase() === "TOPPER"
+      );
     } else if (category?.toUpperCase() === "PILLOWS") {
-      const data = productData.filter(eachMattress => {
-        return eachMattress?.category?.toUpperCase() === "PILLOW";
-      });
-      setDisplayedData(data);
+      filteredData = productData.filter(
+        eachMattress => eachMattress?.category?.toUpperCase() === "PILLOW"
+      );
     } else if (category?.toUpperCase() === "BEDBASE") {
-      const data = productData.filter(eachMattress => {
-        return eachMattress?.category?.toUpperCase() === "BEDBASE";
-      });
-      setDisplayedData(data);
+      filteredData = productData.filter(
+        eachMattress => eachMattress?.category?.toUpperCase() === "BEDBASE"
+      );
     } else if (category?.toUpperCase() === "PROTECTORS") {
-      const data = productData.filter(eachMattress => {
-        return eachMattress?.category?.toUpperCase() === "PROTECTOR";
-      });
-
-      setDisplayedData(data);
+      filteredData = productData.filter(
+        eachMattress => eachMattress?.category?.toUpperCase() === "PROTECTOR"
+      );
     } else if (category?.toUpperCase() === "MATS") {
-      const data = productData.filter(eachMattress => {
-        return eachMattress?.category?.toUpperCase() === "MATS";
-      });
-      setDisplayedData(data);
+      filteredData = productData.filter(
+        eachMattress => eachMattress?.category?.toUpperCase() === "MATS"
+      );
     } else if (category?.toUpperCase() === "CUSHION") {
-      const data = productData.filter(eachMattress => {
-        return eachMattress?.category?.toUpperCase() === "CUSHION";
-      });
-
-      setDisplayedData(data);
+      filteredData = productData.filter(
+        eachMattress => eachMattress?.category?.toUpperCase() === "CUSHION"
+      );
     } else if (category?.toUpperCase() === "COMPRESSION") {
-      const data = productData.filter(eachMattress => {
-        return eachMattress?.category?.toUpperCase() === "COMPRESSION";
-      });
-
-      setDisplayedData(data);
+      filteredData = productData.filter(
+        eachMattress => eachMattress?.category?.toUpperCase() === "COMPRESSION"
+      );
     } else if (category?.toUpperCase() === "TRAVEL") {
-      const data = productData.filter(eachMattress => {
-        return eachMattress?.category?.toUpperCase() === "TRAVEL";
-      });
-
-      setDisplayedData(data);
+      filteredData = productData.filter(
+        eachMattress => eachMattress?.category?.toUpperCase() === "TRAVEL"
+      );
     }
+
+    // Sort alphabetically by product name (assuming product name is stored in a property called 'name')
+    filteredData.sort((a, b) => a.name.localeCompare(b.name));
+
+    setDisplayedData(filteredData);
   };
 
   const [user, setUser] = useState(null);
@@ -476,6 +530,8 @@ export const Shop = () => {
                             All <span>({productData.length})</span>
                           </a>
                         </li>
+
+                        {/* FOR MATTRESS SECTION */}
                         <li>
                           <a href={`/shop?category=mattress`}>
                             Mattresses{" "}

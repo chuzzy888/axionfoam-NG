@@ -274,6 +274,7 @@ export const Contact2 = () => {
         </header>
         {/* End Main Header */}
         {/* Page Title */}
+
         <section className="page-title">
           <div className="auto-container">
             <h2>Contact Us</h2>
@@ -286,9 +287,111 @@ export const Contact2 = () => {
             </ul>
           </div>
         </section>
+
         {/* End Page Title */}
         {/* Contact Page Section */}
         <div className="contact-page-section">
+          <div className="contact-boxed">
+            {/* Title Box */}
+            <div className="title-box">
+              <h3>Send a message</h3>
+              <div className="text">
+                Your email address will not be published. Required fields are
+                marked *
+              </div>
+            </div>
+            {/* Contact Form */}
+            <div className="contact-form">
+              <form
+                onSubmit={e => {
+                  e.preventDefault();
+                }}
+              >
+                <div className="row clearfix">
+                  <div className="col-lg-6 col-md-6 col-sm-12 form-group">
+                    <input
+                      type="text"
+                      name="username"
+                      placeholder="Enter Your name"
+                      required
+                      value={name}
+                      onChange={e => {
+                        setName(e.target.value);
+                      }}
+                      style={{
+                        borderColor: "gray",
+                      }}
+                    />
+                  </div>
+                  <div className="col-lg-6 col-md-6 col-sm-12 form-group">
+                    <input
+                      type="text"
+                      name="email"
+                      placeholder="Enter Email Address*"
+                      required
+                      value={email}
+                      onChange={e => {
+                        setEmail(e.target.value);
+                      }}
+                      style={{
+                        borderColor: "gray",
+                      }}
+                    />
+                  </div>
+
+                  <div className="col-lg-6 col-md-6 col-sm-12 form-group">
+                    <input
+                      type="text"
+                      name="phone"
+                      placeholder="Enter Phone Number"
+                      required
+                      value={phone}
+                      onChange={e => {
+                        setPhone(e.target.value);
+                      }}
+                      style={{
+                        borderColor: "gray",
+                      }}
+                    />
+                  </div>
+                  <div className="col-lg-12 col-md-12 col-sm-12 form-group">
+                    <textarea
+                      className
+                      name="message"
+                      placeholder="Enter Your Message here"
+                      defaultValue={""}
+                      value={message}
+                      onChange={e => {
+                        setMessage(e.target.value);
+                      }}
+                      style={{
+                        borderColor: "gray",
+                      }}
+                    />
+                  </div>
+                  <div className="col-lg-12 col-md-12 col-sm-12 form-group">
+                    <div className="buttons-box">
+                      {!loading ? (
+                        <button
+                          onClick={() => {
+                            sendMessage();
+                          }}
+                          className="theme-btn btn-style-one"
+                        >
+                          Send message
+                        </button>
+                      ) : (
+                        <button className="theme-btn btn-style-one">
+                          Loading...
+                        </button>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            {/* End Contact Form */}
+          </div>
           <div className="auto-container">
             <div className="row clearfix">
               {/* Info Column */}
@@ -301,7 +404,7 @@ export const Contact2 = () => {
                       <div className="content">
                         <strong>Mail address</strong>
                         <a href="mailto:Axionfoam.ng@gmail.com">
-                          Axionfoam.ng@gmail.com
+                          Axionfoam@gmail.com
                         </a>
                         <br />
                       </div>
@@ -312,15 +415,18 @@ export const Contact2 = () => {
                     <div className="box-inner d-flex align-items-center">
                       <div className="icon flaticon-map" />
                       <div className="content">
-                        <strong>Axion Showrooms</strong>
+                        {/* <strong>Axion </strong> */}
                         <div className="text">
-                          Adunni Mall, 30 Addo Road Lekki-Ajah
+                          <b style={{ fontWeight: "900" }}>-</b> Adunni Mall, 30
+                          Addo Road Lekki-Ajah.
                         </div>
                         <div className="text">
-                          41 Okuru link road, Odili road, Port Harcourt
+                          <b style={{ fontWeight: "900" }}>-</b> 41 Okuru link
+                          road, Odili road, Port Harcourt.
                         </div>
                         <div className="text">
-                          23332 Farmington Road, Farmington, Michigan
+                          <b style={{ fontWeight: "900" }}>-</b> SAHAD STORES,
+                          Central Area, Abuja.
                         </div>
                       </div>
                     </div>
@@ -331,9 +437,8 @@ export const Contact2 = () => {
                       <div className="icon flaticon-call" />
                       <div className="content">
                         <strong>Phone Number</strong>
-                        <a href="tel:+12482823277">+12482823277</a>
-                        <br />
-                        <a href="tel:08113805555">08113805555</a>
+
+                        <a href="tel:08113805555">08113705555</a>
                       </div>
                     </div>
                   </div>
@@ -382,110 +487,9 @@ export const Contact2 = () => {
                 <li className="fs-5 mt-3"> 4). Cmore global kaduna </li>
                 <li className="fs-5 mt-3"> 5). Gold shied furniture kaduna</li>
               </div> */}
-              
             </div>
             {/* Contact Boxed */}
-            <div className="contact-boxed">
-              {/* Title Box */}
-              <div className="title-box">
-                <h3>Send a message</h3>
-                <div className="text">
-                  Your email address will not be published. Required fields are
-                  marked *
-                </div>
-              </div>
-              {/* Contact Form */}
-              <div className="contact-form">
-                <form
-                  onSubmit={(e) => {
-                    e.preventDefault();
-                  }}
-                >
-                  <div className="row clearfix">
-                    <div className="col-lg-6 col-md-6 col-sm-12 form-group">
-                      <input
-                        type="text"
-                        name="username"
-                        placeholder="Enter Your name"
-                        required
-                        value={name}
-                        onChange={(e) => {
-                          setName(e.target.value);
-                        }}
-                        style={{
-                          borderColor: "gray",
-                        }}
-                      />
-                    </div>
-                    <div className="col-lg-6 col-md-6 col-sm-12 form-group">
-                      <input
-                        type="text"
-                        name="email"
-                        placeholder="Enter Email Address*"
-                        required
-                        value={email}
-                        onChange={(e) => {
-                          setEmail(e.target.value);
-                        }}
-                        style={{
-                          borderColor: "gray",
-                        }}
-                      />
-                    </div>
 
-                    <div className="col-lg-6 col-md-6 col-sm-12 form-group">
-                      <input
-                        type="text"
-                        name="phone"
-                        placeholder="Enter Phone Number"
-                        required
-                        value={phone}
-                        onChange={(e) => {
-                          setPhone(e.target.value);
-                        }}
-                        style={{
-                          borderColor: "gray",
-                        }}
-                      />
-                    </div>
-                    <div className="col-lg-12 col-md-12 col-sm-12 form-group">
-                      <textarea
-                        className
-                        name="message"
-                        placeholder="Enter Your Message here"
-                        defaultValue={""}
-                        value={message}
-                        onChange={(e) => {
-                          setMessage(e.target.value);
-                        }}
-                        style={{
-                          borderColor: "gray",
-                        }}
-                      />
-                    </div>
-                    <div className="col-lg-12 col-md-12 col-sm-12 form-group">
-                      <div className="buttons-box">
-                        {!loading ? (
-                          <button
-                            onClick={() => {
-                              sendMessage();
-                            }}
-                            className="theme-btn btn-style-one"
-                          >
-                            Send message
-                          </button>
-                        ) : (
-                          <button className="theme-btn btn-style-one">
-                            Loading...
-                          </button>
-                        )}
-                      </div>
-                    </div>
-                  </div>
-                </form>
-              </div>
-              {/* End Contact Form */}
-            </div>
             {/* End Contact Boxed */}
           </div>
         </div>

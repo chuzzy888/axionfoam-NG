@@ -263,6 +263,14 @@ export const Home = () => {
                       </a>
                     </li>
                     <li class="active">
+                      <a href="/shop?category=cushion">
+                        <span class="icon">
+                          <img src="ch.png" alt="" style={{ width: "30px" }} />
+                        </span>
+                        Cushion
+                      </a>
+                    </li>
+                    <li class="active">
                       <a href="/shop?category=protectors">
                         <span class="icon">
                           <img

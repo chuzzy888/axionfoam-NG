@@ -28,9 +28,9 @@ export const Footer = () => {
                     <ul className="contact-list">
                       <li>
                         <span className="icon flaticon-map" />
-                        <strong>Axion Showrooms -</strong>
-                        <br />
-                        <br />
+                        {/* <strong>Axion </strong> */}
+                        {/* <br />
+                        <br /> */}
                         <a
                           href="https://maps.google.com/?q=30 Addo Road"
                           target="_blank"
@@ -49,6 +49,16 @@ export const Footer = () => {
                           41 Okuru link road,{" "}
                         </a>
                         Odili road, Port Harcourt
+                        <br />
+                        <br />
+                        <a
+                          href="https://maps.app.goo.gl/AJezkn9WMZ45kGmN8"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          SAHAD STORES,{" "}
+                        </a>
+                        Central Area, Abuja.
                         <br />
                       </li>
                       <li>

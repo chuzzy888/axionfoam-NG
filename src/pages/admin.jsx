@@ -70,19 +70,19 @@ export const Admin = () => {
 
   function filterStatus() {
     if (status?.toUpperCase() === "SPAM") {
-      let newstatus = originalOrders.filter((eachorder) => {
+      let newstatus = originalOrders.filter(eachorder => {
         return eachorder.spam === true;
       });
 
       setOrders(newstatus || null);
     } else if (status?.toUpperCase() === "NOTSPAM") {
-      let newstatus = originalOrders.filter((eachorder) => {
+      let newstatus = originalOrders.filter(eachorder => {
         return eachorder.spam === false;
       });
 
       setOrders(newstatus || null);
     } else if (status?.toUpperCase() === "DELIVERED") {
-      let newstatus = originalOrders.filter((eachorder) => {
+      let newstatus = originalOrders.filter(eachorder => {
         return eachorder.delivered === true;
       });
 
@@ -90,7 +90,7 @@ export const Admin = () => {
     } else if (status?.toUpperCase() === "ALL") {
       setOrders(originalOrders);
     } else if (status?.toUpperCase() === "NOTDELIVERED") {
-      let newstatus = originalOrders.filter((eachorder) => {
+      let newstatus = originalOrders.filter(eachorder => {
         return eachorder.delivered === false;
       });
 
@@ -132,14 +132,14 @@ export const Admin = () => {
     // console.log(selectedImage);
     if (selectedImage) {
       const reader = new FileReader();
-      reader.onload = (e) => {
-        const exists = images.find((item) => {
+      reader.onload = e => {
+        const exists = images.find(item => {
           return item?.id === index;
         });
 
         if (exists) {
           console.log("does");
-          const filtered = images.filter((item) => {
+          const filtered = images.filter(item => {
             return item.id !== index;
           });
           setImages([...filtered, { id: index, image: e.target.result }]);
@@ -154,8 +154,8 @@ export const Admin = () => {
   };
   const handleNameChange = (e, index) => {
     console.log(index, e.target.value);
-    setSizes((prevSizes) => {
-      const indexToUpdate = prevSizes.findIndex((item) => item?.id === index);
+    setSizes(prevSizes => {
+      const indexToUpdate = prevSizes.findIndex(item => item?.id === index);
 
       if (indexToUpdate !== -1) {
         console.log("exists");
@@ -188,8 +188,8 @@ export const Admin = () => {
     });
   };
   const handleWidthChange = (e, index) => {
-    setSizes((prevSizes) => {
-      const indexToUpdate = prevSizes.findIndex((item) => item?.id === index);
+    setSizes(prevSizes => {
+      const indexToUpdate = prevSizes.findIndex(item => item?.id === index);
 
       if (indexToUpdate !== -1) {
         let width = 0;
@@ -231,8 +231,8 @@ export const Admin = () => {
   };
   const handleHeightChange = (e, index) => {
     console.log(e.target.value);
-    setSizes((prevSizes) => {
-      const indexToUpdate = prevSizes.findIndex((item) => item?.id === index);
+    setSizes(prevSizes => {
+      const indexToUpdate = prevSizes.findIndex(item => item?.id === index);
 
       if (indexToUpdate !== -1) {
         let height = 0;
@@ -272,8 +272,8 @@ export const Admin = () => {
     });
   };
   const handlePriceChange = (e, index) => {
-    setSizes((prevSizes) => {
-      const indexToUpdate = prevSizes.findIndex((item) => item?.id === index);
+    setSizes(prevSizes => {
+      const indexToUpdate = prevSizes.findIndex(item => item?.id === index);
 
       if (indexToUpdate !== -1) {
         console.log("exists");
@@ -306,8 +306,8 @@ export const Admin = () => {
     });
   };
   const handleUnitChange = (e, index) => {
-    setSizes((prevSizes) => {
-      const indexToUpdate = prevSizes.findIndex((item) => item?.id === index);
+    setSizes(prevSizes => {
+      const indexToUpdate = prevSizes.findIndex(item => item?.id === index);
 
       if (indexToUpdate !== -1) {
         console.log("exists");
@@ -353,12 +353,12 @@ export const Admin = () => {
           name: name,
           category: category,
           popular: popular,
-          images: images.map((item) => {
+          images: images.map(item => {
             return item.image;
           }),
           intro: intro,
           description: description,
-          sizes: sizes.map((item) => {
+          sizes: sizes.map(item => {
             return {
               name: item.name,
               width: item.width,
@@ -394,13 +394,13 @@ export const Admin = () => {
   };
   const handleImageDelete = async (id, name) => {
     try {
-      const productExists = allProducts.find((item) => {
+      const productExists = allProducts.find(item => {
         return item.id === id;
       });
 
       console.log(displayedImages);
 
-      const filtered = displayedImages.filter((eachImage) => {
+      const filtered = displayedImages.filter(eachImage => {
         return eachImage !== name;
       });
 
@@ -444,7 +444,7 @@ export const Admin = () => {
 
         {
           id,
-          images: images.map((eachImage) => {
+          images: images.map(eachImage => {
             return eachImage.image;
           }),
         }
@@ -459,7 +459,7 @@ export const Admin = () => {
       );
 
       setTimeout(() => {
-        const updatedProduct = getproducts?.data?.data.find((item) => {
+        const updatedProduct = getproducts?.data?.data.find(item => {
           return item.id === id;
         });
         setDisplayedImages(JSON.parse(updatedProduct.images));
@@ -484,7 +484,7 @@ export const Admin = () => {
           popular,
           intro,
           description,
-          sizes: sizes.map((item) => {
+          sizes: sizes.map(item => {
             return {
               name: item.name,
               width: item.width,
@@ -520,8 +520,8 @@ export const Admin = () => {
   };
   const handleSizeDelete = (eachSize, index) => {
     // console.log(eachSize, index);
-    setSizes((prev) => {
-      return prev.filter((eachSize) => {
+    setSizes(prev => {
+      return prev.filter(eachSize => {
         if (eachSize.id !== index) {
           return eachSize;
         }
@@ -533,7 +533,7 @@ export const Admin = () => {
     if (category.toUpperCase() === "ALL") {
       setFilteredProducts(allProducts);
     } else {
-      const filtered = allProducts.filter((eachproduct) => {
+      const filtered = allProducts.filter(eachproduct => {
         return eachproduct.category.toUpperCase() === category.toUpperCase();
       });
 
@@ -1004,7 +1004,7 @@ export const Admin = () => {
                         <h1 className="fs-5"> All Products</h1>
                         <div class="myselect">
                           <select
-                            onChange={(e) => {
+                            onChange={e => {
                               setCategory(e.target.value);
                             }}
                           >
@@ -1039,7 +1039,7 @@ export const Admin = () => {
                             striped
                             bordered
                             hover
-                            size="sm"
+                            size="cm"
                             style={{
                               borderColor: "black",
                             }}
@@ -1154,7 +1154,7 @@ export const Admin = () => {
                                     <td>
                                       {JSON.parse(item?.sizes)
                                         ?.slice(0, 1)
-                                        ?.map((eachsize) => {
+                                        ?.map(eachsize => {
                                           return (
                                             <div>
                                               <div className="eachsize">
@@ -1313,7 +1313,7 @@ export const Admin = () => {
                       <form
                         // enctype="multipart/form-data"
                         action=""
-                        onSubmit={(e) => {
+                        onSubmit={e => {
                           e.preventDefault();
                         }}
                       >
@@ -1321,7 +1321,7 @@ export const Admin = () => {
                           <button
                             className="fs-6 px-4 btn btn-sm btn-primary mb-2"
                             onClick={() => {
-                              setNumImages((prev) => {
+                              setNumImages(prev => {
                                 return prev + 1;
                               });
                             }}
@@ -1336,7 +1336,7 @@ export const Admin = () => {
                               className="myinput mt-3 ms-2"
                               type="file"
                               accept="image/*"
-                              onChange={(e) => {
+                              onChange={e => {
                                 handleFileChange(e, index);
                               }}
                             />
@@ -1355,7 +1355,7 @@ export const Admin = () => {
                               placeholder="Enter your name"
                               value={name}
                               className="border myinput px-3 py-2 mt-1 w-100 rounded"
-                              onChange={(e) => {
+                              onChange={e => {
                                 setName(e.target.value);
                               }}
                             />
@@ -1372,7 +1372,7 @@ export const Admin = () => {
                               style={{
                                 border: "1px solid rgba(0, 0, 0, 0.145)",
                               }}
-                              onChange={(e) => {
+                              onChange={e => {
                                 setCategory(e.target.value);
                               }}
                             >
@@ -1396,7 +1396,7 @@ export const Admin = () => {
                               id=""
                               value={popular}
                               className="border w-100  py-2 rounded"
-                              onChange={(e) => {
+                              onChange={e => {
                                 setPopular(e.target.value);
                               }}
                             >
@@ -1420,7 +1420,7 @@ export const Admin = () => {
                               border: "1px solid  rgba(0, 0, 0, 0.145)",
                             }}
                             value={intro}
-                            onChange={(e) => {
+                            onChange={e => {
                               setIntro(e.target.value);
                             }}
                           ></textarea>
@@ -1440,7 +1440,7 @@ export const Admin = () => {
                             className=" mt-3 w-100 px-3 py-2"
                             placeholder="Enter Description"
                             value={description}
-                            onChange={(e) => {
+                            onChange={e => {
                               setDescription(e.target.value);
                             }}
                           ></textarea>
@@ -1469,7 +1469,7 @@ export const Admin = () => {
                                 type="text"
                                 className="border px-2 py-1 rounded"
                                 placeholder="Name"
-                                onChange={(e) => {
+                                onChange={e => {
                                   handleNameChange(e, index);
                                 }}
                               />
@@ -1486,7 +1486,7 @@ export const Admin = () => {
                                 // defaultValue={0}
                                 className="border  px-2 py-1 rounded"
                                 placeholder="Width"
-                                onChange={(e) => {
+                                onChange={e => {
                                   handleWidthChange(e, index);
                                 }}
                               />
@@ -1503,7 +1503,7 @@ export const Admin = () => {
                                 type="text"
                                 className="border  px-2 py-1 rounded"
                                 placeholder="Height"
-                                onChange={(e) => {
+                                onChange={e => {
                                   handleHeightChange(e, index);
                                 }}
                               />
@@ -1520,7 +1520,7 @@ export const Admin = () => {
                                 type="text"
                                 className="border  px-2 py-1 rounded"
                                 placeholder="Price"
-                                onChange={(e) => {
+                                onChange={e => {
                                   handlePriceChange(e, index);
                                 }}
                               />
@@ -1536,14 +1536,14 @@ export const Admin = () => {
                               <select
                                 name=""
                                 id=""
-                                onChange={(e) => {
+                                onChange={e => {
                                   handleUnitChange(e, index);
                                 }}
                                 className="border px-2 py-1 rounded"
                               >
                                 <option value="ft">FT</option>
                                 <option value="inch">INCH</option>
-                                <option value="sm">CM</option>
+                                <option value="cm">CM</option>
                               </select>
                             </div>
                           </label>
@@ -1552,7 +1552,7 @@ export const Admin = () => {
                         <button
                           className="fs-6 px-2 text-sm btn btn-sm btn-primary mb-4 "
                           onClick={() => {
-                            setnumSizes((prev) => {
+                            setnumSizes(prev => {
                               return prev + 1;
                             });
                           }}
@@ -1598,7 +1598,7 @@ export const Admin = () => {
                       <h1 className="fs-4">Orders</h1>
                       <div class="myselect">
                         <select
-                          onChange={(e) => {
+                          onChange={e => {
                             setStatus(e.target.value);
                           }}
                         >
@@ -1659,7 +1659,7 @@ export const Admin = () => {
                                     }}
                                   >
                                     {JSON.parse(eachOrder?.products)?.map(
-                                      (eachproduct) => {
+                                      eachproduct => {
                                         return (
                                           <p
                                             className="text-dark d-flex align-items-center"
@@ -1751,7 +1751,7 @@ export const Admin = () => {
                                   <td>{eachOrder?.price}</td>
                                   <td>
                                     <button
-                                      onClick={(e) => {
+                                      onClick={e => {
                                         handleShowOrder();
                                         setOrderShowing(eachOrder);
                                       }}
@@ -1882,7 +1882,7 @@ export const Admin = () => {
                         // width: "50%",
                         border: "2px solid black",
                       }}
-                      onChange={(e) => {
+                      onChange={e => {
                         setName(e.target.value);
                       }}
                     />
@@ -1907,7 +1907,7 @@ export const Admin = () => {
                         padding: "6px 3px",
                         // width: "50%",
                       }}
-                      onChange={(e) => {
+                      onChange={e => {
                         setCategory(e.target.value);
                       }}
                       className="rounded"
@@ -1940,7 +1940,7 @@ export const Admin = () => {
                       id=""
                       value={popular}
                       className="border py-2 rounded"
-                      onChange={(e) => {
+                      onChange={e => {
                         setPopular(e.target.value);
                       }}
                     >
@@ -1970,7 +1970,7 @@ export const Admin = () => {
                       border: "1px solid rgba(0, 0, 0, 0.145)",
                     }}
                     value={intro}
-                    onChange={(e) => {
+                    onChange={e => {
                       setIntro(e.target.value);
                     }}
                   ></textarea>
@@ -1996,7 +1996,7 @@ export const Admin = () => {
                     className="px-3 py-2"
                     placeholder="Enter description"
                     value={description}
-                    onChange={(e) => {
+                    onChange={e => {
                       setDescription(e.target.value);
                     }}
                   ></textarea>
@@ -2025,7 +2025,7 @@ export const Admin = () => {
                             className="border py-1 px-1 rounded"
                             placeholder="name"
                             value={eachsize.name}
-                            onChange={(e) => {
+                            onChange={e => {
                               handleNameChange(e, index);
                             }}
                           />
@@ -2037,7 +2037,7 @@ export const Admin = () => {
                             className="border py-1 px-1 rounded"
                             placeholder="Width"
                             value={eachsize.width}
-                            onChange={(e) => {
+                            onChange={e => {
                               handleWidthChange(e, index);
                             }}
                           />
@@ -2050,7 +2050,7 @@ export const Admin = () => {
                             className="border py-1 px-1 rounded"
                             placeholder="Height"
                             value={eachsize.height}
-                            onChange={(e) => {
+                            onChange={e => {
                               handleHeightChange(e, index);
                             }}
                           />
@@ -2063,7 +2063,7 @@ export const Admin = () => {
                             className="border py-1 px-1 rounded"
                             placeholder="Price"
                             value={eachsize.price}
-                            onChange={(e) => {
+                            onChange={e => {
                               handlePriceChange(e, index);
                             }}
                           />
@@ -2075,14 +2075,14 @@ export const Admin = () => {
                             name=""
                             id=""
                             value={eachsize.unit}
-                            onChange={(e) => {
+                            onChange={e => {
                               handleUnitChange(e, index);
                             }}
                             className="border py-1 px-1 rounded"
                           >
                             <option value="ft">FT</option>
                             <option value="inch">INCH</option>
-                            <option value="sm">CM</option>
+                            <option value="cm">CM</option>
                           </select>
                         </div>
                         <button
@@ -2127,7 +2127,7 @@ export const Admin = () => {
                           type="text"
                           className="border py-1 px-1 rounded"
                           placeholder="name"
-                          onChange={(e) => {
+                          onChange={e => {
                             handleNameChange(e, index + numberOfExistingSizes);
                           }}
                         />
@@ -2140,7 +2140,7 @@ export const Admin = () => {
                           type="text"
                           className="border py-1 px-1 rounded"
                           placeholder="Width"
-                          onChange={(e) => {
+                          onChange={e => {
                             handleWidthChange(e, index + numberOfExistingSizes);
                           }}
                         />
@@ -2154,7 +2154,7 @@ export const Admin = () => {
                           type="text"
                           className="border py-1 px-1 rounded"
                           placeholder="Height"
-                          onChange={(e) => {
+                          onChange={e => {
                             handleHeightChange(
                               e,
                               index + numberOfExistingSizes
@@ -2171,7 +2171,7 @@ export const Admin = () => {
                           type="text"
                           className="border py-1 px-1 rounded"
                           placeholder="Price"
-                          onChange={(e) => {
+                          onChange={e => {
                             handlePriceChange(e, index + numberOfExistingSizes);
                           }}
                         />
@@ -2185,13 +2185,13 @@ export const Admin = () => {
                           name=""
                           id=""
                           className="border py-1 px-1 rounded"
-                          onChange={(e) => {
+                          onChange={e => {
                             handleUnitChange(e, index + numberOfExistingSizes);
                           }}
                         >
                           <option value="ft">FT</option>
                           <option value="inch">INCH</option>
-                          <option value="sm">CM</option>
+                          <option value="cm">CM</option>
                         </select>
                       </div>
 
@@ -2212,7 +2212,7 @@ export const Admin = () => {
                 <button
                   className="px-3 py-2 btn btn-danger btn-sm rounded"
                   onClick={() => {
-                    setnumSizes((prev) => {
+                    setnumSizes(prev => {
                       return prev + 1;
                     });
                   }}
@@ -2230,7 +2230,7 @@ export const Admin = () => {
                     rowGap: "20px",
                   }}
                 >
-                  {displayedImages.map((item) => {
+                  {displayedImages.map(item => {
                     return (
                       <div className="d-flex flex-column me-5">
                         <img
@@ -2272,7 +2272,7 @@ export const Admin = () => {
                       className="mt-3"
                       type="file"
                       accept="image/*"
-                      onChange={(e) => {
+                      onChange={e => {
                         handleFileChange(e, index);
                       }}
                     />
@@ -2283,7 +2283,7 @@ export const Admin = () => {
                   <button
                     className="py-1 px-3 rounded mt-2 mb-3"
                     onClick={() => {
-                      setNumImages((prev) => {
+                      setNumImages(prev => {
                         return prev + 1;
                       });
                     }}
@@ -2349,7 +2349,7 @@ export const Admin = () => {
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            {allDisplayingSizes.map((eachsize) => {
+            {allDisplayingSizes.map(eachsize => {
               return (
                 <div
                   className="d-flex flex-column w-full"

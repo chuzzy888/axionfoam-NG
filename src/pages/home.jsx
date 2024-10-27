@@ -324,16 +324,12 @@ export const Home = () => {
                               Shop
                             </a>
                           </li>
-                          <li>
+                          {/* <li>
                             <a href="/compare" className="dhead">
                               Compare products
                             </a>
-                          </li>
-                          <li>
-                            <a href="/contact" className="dhead">
-                              Contact us
-                            </a>
-                          </li>
+                          </li> */}
+
                           {!user ? (
                             <li>
                               <a href="/login" className="dhead">
@@ -349,7 +345,13 @@ export const Home = () => {
                           )}
                           <li>
                             <a href="/search" className="dhead">
-                              Search for Products
+                              Search
+                            </a>
+                          </li>
+
+                          <li>
+                            <a href="/contact" className="dhead">
+                              Contact
                             </a>
                           </li>
                         </ul>
@@ -709,7 +711,7 @@ export const Home = () => {
                               </li>
                             </ul>
                           </li>
-                          <li class="dropdown">
+                          {/* <li class="dropdown">
                             <a
                               href="/shop?category=compression"
                               className="dhead"
@@ -734,15 +736,15 @@ export const Home = () => {
                                 </a>
                               </li>
                             </ul>
-                          </li>
+                          </li> */}
                           <li class="dropdown">
                             <a href="/shop?category=mats" className="dhead">
-                              Mats
+                              Hotel Collections
                             </a>
                             <ul>
                               <li>
                                 <a href="/shop?category=mats" className="dhead">
-                                  Anti-fatigue mat
+                                  Mattress{" "}
                                 </a>
                               </li>
                             </ul>
@@ -1306,13 +1308,13 @@ export const Home = () => {
           </div>
         </div> */}
 
-        <div class="container mt-2">
+        <div class=" mx-4 ">
           <div class="d-flex flex-column flex-md-row justify-content-between align-items-center mb-4">
-            <h2 class="h2 fw-bold">Shop by Category</h2>
-            <p class="text-muted text-center">
+            <h2 class="h2 fw-bold text-center bgp w-100">Shop by Category</h2>
+            {/* <p class="text-muted text-center">
               "Explore premium bedding essentials for ultimate comfort and
               support."
-            </p>
+            </p> */}
           </div>
           <div class="row g-4">
             <div

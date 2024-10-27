@@ -508,6 +508,8 @@ video {
   justify-content: space-between;
   align-items: center;
 }
+
+/* 
 .promo-modal {
   max-width: 350px;
   width: 90%;
@@ -515,14 +517,14 @@ video {
   background: white;
   padding: 20px;
   border-radius: 10px;
-  position: fixed; /* Changed from relative to fixed */
+  position: fixed; 
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 9999; /* Ensures the modal stays on top */
+  z-index: 9999; 
   outline: none;
   text-align: center;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Adds a subtle shadow */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); 
 }
 
 .promo-modal-overlay {
@@ -535,7 +537,7 @@ video {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 9998; /* Ensure the overlay is behind the modal */
+  z-index: 9998; 
 }
 
 .close-button {
@@ -574,4 +576,78 @@ video {
 
 .promo-button:hover {
   background-color: #0056b3;
+} */
+
+/* General modal styles */
+/* Modal overlay background */
+
+/* Modal overlay background */
+.promo-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it's above other content */
+}
+
+/* Modal itself */
+.promo-modal {
+  width: 80%;
+  max-width: 750px; /* Limit maximum width */
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  z-index: 1001;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0; /* Remove padding */
+  max-height: 90vh; /* Ensure it doesn't take up full screen height */
+}
+
+/* Image Section */
+.promo-image-section {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.promo-img {
+  width: 100%;
+  height: auto;
+  max-height: 90vh; /* Make sure image height doesn't overflow */
+  object-fit: contain; /* Ensure the image is fully visible */
+}
+
+/* Close Button */
+.close-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 44px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.705);
+}
+
+/* Responsive Design - Mobile */
+@media screen and (max-width: 768px) {
+  .promo-modal {
+    width: 90%; /* Take up more width on smaller screens */
+    max-width: none;
+    max-height: auto; /* Allow full height on smaller screens */
+  }
+
+  .promo-img {
+    object-fit: contain; /* Ensure the image maintains its aspect ratio */
+  }
 }

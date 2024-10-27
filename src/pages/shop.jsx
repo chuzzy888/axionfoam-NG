@@ -13,7 +13,7 @@ export const Shop = () => {
   const [category9, setCategory] = useState("all");
   const [goTo, setGoTo] = useState("");
   const [displayedData, setDisplayedData] = useState([]);
-  const [numberDisplayed, setNumberDisplayed] = useState(7);
+  const [numberDisplayed, setNumberDisplayed] = useState(9);
   const [isScrolling, setScrolling] = useState(false);
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
@@ -238,6 +238,7 @@ export const Shop = () => {
             </div>
           </div>
         </div> */}
+
         {/* Preloader End */}
         {/* Main Header / Header Style Four */}
         <header
@@ -471,9 +472,9 @@ export const Shop = () => {
                           <option value="cushion">Cushion</option>
                           <option value="bedbase">Bed Base</option>
                           <option value="protectors">Protectors</option>
-                          <option value="mats">Mats</option>
-                          <option value="compression">Compression</option>
+                          {/* <option value="compression">Compression</option> */}
                           <option value="travel">Travel</option>
+                          <option value="mats">Hotel Collections</option>
                         </select>
                         <div class="custom-arrow"></div>
                       </div>
@@ -637,24 +638,8 @@ export const Shop = () => {
                             </span>
                           </a>
                         </li>
-                        <li>
-                          <a href={`/shop?category=mats`}>
-                            Mats
-                            <span>
-                              (
-                              {
-                                productData.filter(eachMattress => {
-                                  return (
-                                    eachMattress.category.toUpperCase() ===
-                                    "MATS"
-                                  );
-                                }).length
-                              }
-                              )
-                            </span>
-                          </a>
-                        </li>
-                        <li>
+
+                        {/* <li>
                           <a href={`/shop?category=compression`}>
                             Compression
                             <span>
@@ -670,7 +655,7 @@ export const Shop = () => {
                               )
                             </span>
                           </a>
-                        </li>
+                        </li> */}
                         <li>
                           <a href={`/shop?category=travel`}>
                             Travel
@@ -681,6 +666,24 @@ export const Shop = () => {
                                   return (
                                     eachMattress.category.toUpperCase() ===
                                     "TRAVEL"
+                                  );
+                                }).length
+                              }
+                              )
+                            </span>
+                          </a>
+                        </li>
+
+                        <li>
+                          <a href={`/shop?category=mats`}>
+                            Hotel Collections{" "}
+                            <span>
+                              (
+                              {
+                                productData.filter(eachMattress => {
+                                  return (
+                                    eachMattress.category.toUpperCase() ===
+                                    "MATS"
                                   );
                                 }).length
                               }

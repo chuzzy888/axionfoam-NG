@@ -32,7 +32,7 @@ const PromoModal = () => {
         &times;
       </button>
       <div className="promo-image-section">
-        <img src="bn.jpeg" alt="Promo Banner" className="promo-img" />
+        <img src="cbs.jpeg" alt="Promo Banner" className="promo-img" />
       </div>
     </Modal>
   );

@@ -22,13 +22,13 @@ import { Blogpage } from "./pages/blogpage";
 import { Eachblogpost } from "./pages/eachblogpost";
 import { Compare } from "./pages/compare";
 import MattressQuiz from "./pages/MattressQuiz";
-import PromoModal from "./components/PromoModal";
+// import PromoModal from "./components/PromoModal";
 // import $ from "jquery";
 
 function App() {
   return (
     <div>
-      <PromoModal />
+      {/* <PromoModal /> */}
       <CartProvider>
         <BrowserRouter>
           <Routes>

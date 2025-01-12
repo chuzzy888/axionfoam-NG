@@ -1236,7 +1236,7 @@ export const Home = () => {
                   </div>
                 </div>
                 {/* Feature Block */}
-                <div className="feature-block col-xl-3 col-lg-6 col-md-6 col-sm-12">
+                {/* <div className="feature-block col-xl-3 col-lg-6 col-md-6 col-sm-12">
                   <div className="inner-box">
                     <div className="content">
                       <div className="icon flaticon-wallet" />
@@ -1244,7 +1244,7 @@ export const Home = () => {
                       <div className="text">30 days money back guarantee</div>
                     </div>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
